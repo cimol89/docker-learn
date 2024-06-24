@@ -1,0 +1,24 @@
+#copy perintah berikut
+curl -fsSL https://get.docker.com -o install-docker.sh
+
+#lanjut
+sudo sh install-docker.sh
+
+#lanjut untuk permision 
+sudo groupadd docker 
+
+sudo usermod -aG docker $USER 
+
+#install completion
+sudo apt install bash-completion -y
+
+# lanjut copy 
+cat <<EOT >> ~/.bashrc
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+EOT
+
+#reload your shell configuration:
+source ~/.bashrc
+
